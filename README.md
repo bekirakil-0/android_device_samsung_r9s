@@ -1,5 +1,5 @@
 # Android device tree for samsung SM-G990E (r9s)
-
+# Project of Tinydeveloper
 ```
 #
 # Copyright (C) 2023 The Android Open Source Project
