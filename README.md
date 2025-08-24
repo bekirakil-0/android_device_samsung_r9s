@@ -1,4 +1,4 @@
-# Project of Tinydeveloper
+# Project of Bekirakil
 # Android device tree for samsung SM-G990E (r9s)
 
 ```
