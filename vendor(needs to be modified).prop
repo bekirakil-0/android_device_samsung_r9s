@@ -7,3 +7,8 @@ ro.crypto.volume.options=aes-256-xts:aes-256-cts:v2
 ro.security.keystore.keytype=sakv2,gak,sgak,rkp
 ro.hardware.keystore=mdfpp
 ro.hardware.gatekeeper=mdfpp
+
+# For full encryption support
+After fixing this file with the values on SM-G990E enable the "#TARGET_VENDOR_PROP += device/samsung/r9s/vendor.prop" flag under the "#crypto" header.
+Write down the requied modules on this flag "#TW_LOAD_VENDOR_MODULES :=..." and enable all flags on the "# PRODUCT_COPY_FILES directives" header.
+Add the requied files in the root/vendor/lib64 location.
