@@ -10,6 +10,9 @@ odm		/odm		ext4						wait,logical,first_stage_mount,backup=1,flashimg,display="O
 /vendor_image	emmc		/dev/block/bootdevice/by-name/vendor		flags=backup=1;flashimg;display="Vendor Image"
 /product_image	emmc		/dev/block/bootdevice/by-name/product		flags=backup=1;flashimg;display="Product Image"
 /odm_image	emmc		/dev/block/bootdevice/by-name/odm		flags=backup=1;flashimg;display="Odm Image"
+/system_ext_image	emmc	/dev/block/bootdevice/by-name/system_ext	flags=backup=0;flashimg;display="System_EXT Image"
+/vendor_dlkm_image	emmc	/dev/block/bootdevice/by-name/vendor_dlkm	flags=backup=0;flashimg;display="Vendor_DLKM Image"
+/odm_dlkm_image	emmc	/dev/block/bootdevice/by-name/odm_dlkm	flags=backup=0;flashimg;display="Odm_DLKM Image"
 
 # Physical partitions
 /metadata	ext4		/dev/block/bootdevice/by-name/metadata		flags=backup=1;display="Metadata"
@@ -18,6 +21,12 @@ odm		/odm		ext4						wait,logical,first_stage_mount,backup=1,flashimg,display="O
 /data		f2fs		/dev/block/bootdevice/by-name/userdata		flags=length=-20480;backup=1;display="Data"
 /sdcard         sdfat           /dev/block/mmcblk0p1                            flags=backup=1;display="Internal Data"
 /cache		ext4		/dev/block/bootdevice/by-name/cache		flags=backup=1;display="Cache"
+/firmware	emmc		/dev/block/bootdevice/by-name/apnhlos		flags=backup=1;display="Firmware"
+/persist	ext4		/dev/block/bootdevice/by-name/persist		flags=display="Persist"
+/dsp		emmc		/dev/block/bootdevice/by-name/dsp
+/misc		emmc		/dev/block/bootdevice/by-name/misc
+/vbmeta		emmc		/dev/block/bootdevice/by-name/vbmeta		flags=backup=1;flashimg;display="Vbmeta"
+/preloader	emmc		/dev/block/bootdevice/by-name/bootloader
 /efs		ext4		/dev/block/bootdevice/by-name/efs		flags=backup=1;display="EFS"
 /sec_efs	ext4            /dev/block/bootdevice/by-name/sec_efs           flags=backup=1;display="sec_efs"
 /modem		emmc		/dev/block/bootdevice/by-name/radio		flags=backup=1;display="Modem"
