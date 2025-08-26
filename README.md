@@ -1,4 +1,4 @@
-# Android TWRP device tree for samsung SM-G990E (r9s)
+# Android TWRP Device tree for Samsung SM-G990E (r9s)
 
 ```
 #
