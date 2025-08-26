@@ -4,7 +4,6 @@
 ```
 #
 # Copyright (C) 2023 The Android Open Source Project
-# Copyright (C) 2023 Bekirakil
 # SPDX-License-Identifier: Apache-2.0
 #
 ```
