@@ -2,5 +2,5 @@ service health-hal-2-1-samsung /vendor/bin/hw/android.hardware.health@2.1-servic
     class hal charger
     user system
     group system
-    capabilities WAKE_ALARM BLOCK_SUSPEND
+    capabilities WAKE_ALARM
     file /dev/kmsg w
