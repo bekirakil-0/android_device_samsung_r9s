@@ -1,4 +1,4 @@
-import /init.recovery.exynos2100_decrypt.rc
+import /init.recovery.exynos_decrypt.rc
 
 on init
     write /proc/sys/kernel/hung_task_timeout_secs 0
