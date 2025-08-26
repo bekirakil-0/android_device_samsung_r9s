@@ -48,7 +48,7 @@ TARGET_SCREEN_DENSITY := 480
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=exynos2100 androidboot.selinux=permissive loop.max_part=7 buildvariant=eng #androidboot.usbcontroller=...
+BOARD_KERNEL_CMDLINE := androidboot.hardware=exynos2100 androidboot.selinux=permissive loop.max_part=7 buildvariant=eng androidboot.usbcontroller=10e00000.usb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_SECOND_OFFSET := 0x80000000
@@ -129,7 +129,7 @@ VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
 # Crypto (Disabled until i fix it)
-#TARGET_VENDOR_PROP += device/samsung/r9s/vendor.prop
+TARGET_VENDOR_PROP += device/samsung/r9s/vendor.prop
 TW_INCLUDE_CRYPTO := false
 TW_INCLUDE_CRYPTO_FBE := false
 BOARD_USES_QCOM_FBE_DECRYPTION := false
