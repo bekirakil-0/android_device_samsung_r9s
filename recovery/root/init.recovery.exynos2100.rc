@@ -15,9 +15,9 @@ on fs
     symlink /dev/block/platform/13100000.ufs /dev/block/bootdevice
     symlink /dev/block/platform/13100000.ufs/by-name /dev/block/by-name
 
-#[ Mount firmware, fix value with device mountpoint
+#[ Mount firmware, fix value with device mountpoint]
     mkdir /vendor/firmware_mnt
-    mount vfat /dev/block/bootdevice/by-name/apnhlos /vendor/firmware_mnt]
+    mount vfat /dev/block/bootdevice/by-name/apnhlos /vendor/firmware_mnt
 
  export ANDROID_ROOT /system_root
 
