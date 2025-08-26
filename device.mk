@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2023 The Android Open Source Project
-# Copyright (C) 2023 tinydeveloper-bkr
+# Copyright (C) 2023 Bekirakil
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -16,7 +16,9 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # device decryption (need fix)
-#PRODUCT_PACKAGES += \ (product packages needed for decryption)
+#PRODUCT_PACKAGES += \ 
+   exynos_decrypt \
+   exynos_decrypt_fbe
 
 # Enable Fuse Passthrough
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
