@@ -16,7 +16,7 @@ jobs:
       uses: pierotofy/set-swap-space@master
       with:
         swap-size-gb: 16
-        continue-on-error: true
+      continue-on-error: true
 
     - name: Build TWRP
       uses: mlm-games/TWRP-recovery-build-action@main
