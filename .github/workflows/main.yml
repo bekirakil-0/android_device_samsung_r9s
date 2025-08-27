@@ -6,6 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
+  azure:
+    runs-on: ubuntu-latest
   build:
     name: Build TWRP Recovery with Auto-Detection
     runs-on: ubuntu-lastest
