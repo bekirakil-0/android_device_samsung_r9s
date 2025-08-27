@@ -18,7 +18,7 @@ jobs:
         swap-size-gb: 100
 
     - name: Build TWRP
-      uses: mlm-games/twrp-build-action@main
+      uses: mlm-games/TWRP-recovery-build-action@main
       with:
         # MANIFEST_BRANCH is omitted to use the default branch
         DEVICE_TREE: 'https://github.com/bekirakil-0/android_device_samsung_r9s.git'
