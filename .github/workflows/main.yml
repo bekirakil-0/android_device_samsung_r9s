@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: Build TWRP Recovery with Auto-Detection
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-lastest
     steps:
     - uses: actions/checkout@v4
 
