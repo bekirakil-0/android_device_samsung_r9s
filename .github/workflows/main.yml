@@ -10,7 +10,7 @@ jobs:
     name: Build TWRP Recovery with Auto-Detection
     runs-on: ubuntu-lastest
     steps:
-    - uses: actions/checkout@v4
+    - uses: opentofu/setup-opentofu@v1
 
     - name: Set Swap Space (Optional)
       uses: pierotofy/set-swap-space@master
