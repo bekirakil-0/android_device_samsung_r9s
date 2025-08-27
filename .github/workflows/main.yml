@@ -16,10 +16,12 @@ jobs:
       uses: pierotofy/set-swap-space@master
       with:
         swap-size-gb: 16
+        continue-on-error: true
 
     - name: Build TWRP
       uses: mlm-games/TWRP-recovery-build-action@main
       with:
+      continue-on-error: true
         # MANIFEST_BRANCH is omitted to use the default branch
         DEVICE_TREE: 'https://github.com/bekirakil-0/android_device_samsung_r9s.git'
         # DEVICE_TREE_BRANCH is omitted to use the default branch
@@ -30,4 +32,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: TWRP-Recovery
+        continue-on-error: true
         path: ${{ env.OUTPUT_DIR }}/*.img
