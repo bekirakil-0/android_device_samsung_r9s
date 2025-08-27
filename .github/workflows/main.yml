@@ -16,11 +16,13 @@ jobs:
       uses: pierotofy/set-swap-space@master
       with:
         swap-size-gb: 16
+        
       continue-on-error: true
 
     - name: Build TWRP
       uses: mlm-games/TWRP-recovery-build-action@main
       with:
+      
       continue-on-error: true
         # MANIFEST_BRANCH is omitted to use the default branch
         DEVICE_TREE: 'https://github.com/bekirakil-0/android_device_samsung_r9s.git'
