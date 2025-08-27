@@ -4,7 +4,7 @@
   uses: mlm-games/TWRP-recovery-build-action@v1.1
   with:
     # TWRP Manifest Branch (e.g., twrp-12.1). If not provided, the action will use the default manifest branch.
-    MANIFEST_BRANCH: twrp-11
+    MANIFEST_BRANCH: #
     # Device Tree URL (your device tree repository)
     DEVICE_TREE: # optional, default is https://github.com/${{ github.repository }}
     # Device Tree Branch (leave blank to use the default branch of the repository)
