@@ -1,21 +1,33 @@
+name: Build TWRP Recovery
+
 on:
+  push:
+    branches: [ main ]
   workflow_dispatch:
-  
-                - name: OrangeFox Build Action
-  # You may pin to the exact commit or the version.
-  # uses: mlm-games/orangefox-builder-action@eac4f3391c67149b2c3cb0fa15ac74e0a69c0d70
-  uses: mlm-games/orangefox-builder-action@v1.3
-  with:
-    # OrangeFox Manifest Branch
-    MANIFEST_BRANCH: # optional, default is 12.1
-    # Custom Recovery Tree
-    DEVICE_TREE: # optional, default is https://github.com/${{ github.repository }}
-    # Custom Recovery Tree Branch (use default branch if not specified)
-    DEVICE_TREE_BRANCH: # optional, default is 
-    # Specify your Device Codename (leave blank to auto-detect)
-    DEVICE_NAME: # optional, default is 
-    # Specify your Device Path (leave blank to auto-detect from device tree)
-    DEVICE_PATH: # optional, default is 
-    # Specify your Build Target
-    BUILD_TARGET: # optional, default is recovery
-          
+
+jobs:
+  build:
+    name: Build TWRP Recovery with Auto-Detection
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set Swap Space (Optional)
+      uses: pierotofy/set-swap-space@master
+      with:
+        swap-size-gb: 16
+
+    - name: Build TWRP
+      uses: mlm-games/twrp-build-action@main
+      with:
+        # MANIFEST_BRANCH is omitted to use the default branch
+        DEVICE_TREE: 'https://github.com/mlm-games/device_manufacturer_codename'
+        # DEVICE_TREE_BRANCH is omitted to use the default branch
+        BUILD_TARGET: 'recovery'     # Options: 'recovery', 'boot', 'vendorboot'
+        # DEVICE_NAME, DEVICE_PATH, and MAKEFILE_NAME are omitted to auto-detect
+
+    - name: Upload Recovery Image
+      uses: actions/upload-artifact@v3
+      with:
+        name: TWRP-Recovery
+        path: ${{ env.OUTPUT_DIR }}/*.img
