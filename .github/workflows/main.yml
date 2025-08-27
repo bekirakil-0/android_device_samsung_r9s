@@ -51,8 +51,6 @@ jobs:
         uses: rokibhasansagar/slimhub_actions@main
 
       - uses: actions/checkout@v4
-        with:
-        fetch-depth: 1
       - name: Install python-pip
         run: apt-get install python-pip
 
