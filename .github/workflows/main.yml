@@ -50,6 +50,12 @@ jobs:
       - name: Clean Ubuntu
         uses: rokibhasansagar/slimhub_actions@main
 
+      - uses: actions/checkout@v4
+        with:
+        fetch-depth: 1
+      - name: Install python-pip
+        run: apt-get install python-pip
+
       - name: Swap Space
         uses: pierotofy/set-swap-space@master
         with:
