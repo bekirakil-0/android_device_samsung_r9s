@@ -1,6 +1,6 @@
             - name: TWRP Build Action
   # You may pin to the exact commit or the version.
-  # uses: mlm-games/TWRP-recovery-build-action@0d0a9c9a0fd57fbcc02e267f8d23c9a0568d25d9
+  uses: mlm-games/TWRP-recovery-build-action@0d0a9c9a0fd57fbcc02e267f8d23c9a0568d25d9
   uses: mlm-games/TWRP-recovery-build-action@v1.1
   with:
     # TWRP Manifest Branch (e.g., twrp-12.1). If not provided, the action will use the default manifest branch.
