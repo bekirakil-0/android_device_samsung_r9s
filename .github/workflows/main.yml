@@ -27,7 +27,7 @@ jobs:
         # DEVICE_NAME, DEVICE_PATH, and MAKEFILE_NAME are omitted to auto-detect
 
     - name: Upload Recovery Image
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: TWRP-Recovery
         path: ${{ env.OUTPUT_DIR }}/*.img
