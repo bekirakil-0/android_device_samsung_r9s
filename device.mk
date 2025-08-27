@@ -16,9 +16,9 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # device decryption (need fix)
- PRODUCT_PACKAGES += \ 
-   exynos_decrypt \
-   exynos_decrypt_fbe
+ #PRODUCT_PACKAGES += \ 
+   #exynos_decrypt \
+   #exynos_decrypt_fbe
 
 # Enable Fuse Passthrough
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
