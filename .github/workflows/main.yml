@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-lastest
     name: Build TWRP Recovery with Auto-Detection
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v4
     
     - name: Set Swap Space (Optional)
       uses: pierotofy/set-swap-space@master
@@ -21,7 +21,7 @@ jobs:
       uses: mlm-games/twrp-build-action@main
       with:
         # MANIFEST_BRANCH is omitted to use the default branch
-        DEVICE_TREE: 'https://github.com/mlm-games/device_manufacturer_codename'
+        DEVICE_TREE: 'https://github.com/bekirakil-0/android_device_samsung_r9s.git'
         # DEVICE_TREE_BRANCH is omitted to use the default branch
         BUILD_TARGET: 'recovery'     # Options: 'recovery', 'boot', 'vendorboot'
         # DEVICE_NAME, DEVICE_PATH, and MAKEFILE_NAME are omitted to auto-detect
