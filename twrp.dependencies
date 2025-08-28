@@ -1,6 +1,6 @@
 [
   {
-    "remote":      "tinydeveloper-bkr",
+    "remote":      "bekirakil",
     "repository":  "Exynos_SoC_FBE-FDE_Decryptor",
     "target_path": "device/samsung/r9s",
     "revision":    "main"
