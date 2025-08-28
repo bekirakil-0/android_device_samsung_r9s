@@ -177,6 +177,7 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_INCLUDE_LPDUMP := true
 TW_INCLUDE_LPTOOLS := true
+TW_EXCLUDE_TWRPAPP := true
 
 # Statusbar icons flags
 TW_STATUS_ICONS_ALIGN := center
