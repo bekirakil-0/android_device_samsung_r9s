@@ -51,9 +51,29 @@ jobs:
         uses: rokibhasansagar/slimhub_actions@main
 
       - uses: actions/checkout@v4
-      - name: Install python-pip
-        run: sudo apt-get install python2.7
+      - name: Install python2
+        run: wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz
+             sudo tar xzf Python-2.7.9.tgz
+             cd Python-2.7.9
+             sudo ./configure --enable-optimizations
+             sudo make altinstall
+             
+      - uses: actions/checkout@v4
+      - name: Install python2
+         run: sudo tar xzf Python-2.7.9.tgz
 
+      - uses: actions/checkout@v4
+      - name: Install python2
+         run: cd Python-2.7.9
+
+      - uses: actions/checkout@v4
+      - name: Install python2
+         run: sudo ./configure --enable-optimizations
+
+      - uses: actions/checkout@v4
+      - name: Install python2
+         run: sudo make altinstall
+   
       - name: Swap Space
         uses: pierotofy/set-swap-space@master
         with:
