@@ -59,6 +59,9 @@ jobs:
         with:
           swap-size-gb: 16
 
+      - name: sudo -s
+        run: sudo -s
+
       - name: Build TWRP
         if: matrix.name == 'TWRP'
         uses: mlm-games/TWRP-recovery-build-action@main
