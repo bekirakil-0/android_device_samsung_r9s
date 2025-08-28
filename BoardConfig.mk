@@ -9,6 +9,7 @@ DEVICE_PATH := device/samsung/r9s
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
+DEB_CFLAGS_MAINT_APPEND := -Wno-unused-function
 
 # Architecture
 TARGET_ARCH := arm64
