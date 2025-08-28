@@ -49,7 +49,7 @@ TARGET_SCREEN_DENSITY := 480
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=exynos2100 androidboot.selinux=permissive loop.max_part=7 buildvariant=eng androidboot.usbcontroller=10e00000.usb
+BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32 printk.devkmsg=on firmware_class.path=/vendor/firmware_mnt/image bootconfig androidboot.hardware=exynos2100 androidboot.selinux=permissive loop.max_part=7 buildvariant=eng androidboot.usbcontroller=10e00000.usb androidboot.memcg=1 
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_SECOND_OFFSET := 0x80000000
@@ -150,7 +150,7 @@ TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
-TW_FRAMERATE := 120
+TW_FRAMERATE := 60
 TW_MAX_BRIGHTNESS := 561
 TW_DEFAULT_BRIGHTNESS := 255
 TW_Y_OFFSET := 100
