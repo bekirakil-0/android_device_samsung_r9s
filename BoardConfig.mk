@@ -9,7 +9,7 @@ DEVICE_PATH := device/samsung/r9s
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
-DEB_CFLAGS_MAINT_APPEND := -Wno-unused-function
+#DEB_CFLAGS_MAINT_APPEND := -Wno-unused-function
 
 # Architecture
 TARGET_ARCH := arm64
@@ -67,7 +67,7 @@ BOARD_MKBOOTIMG_ARGS += --board "SRPUG16A017RU"
 BOARD_KERNEL_IMAGE_NAME := Image
 #BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
-#BOARD_CUSTOM_BOOTIMG_MK := device/samsung/r9s/bootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/r9s/bootimg.mk
 TARGET_KERNEL_CONFIG := r9s_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/r9s
 TARGET_KERNEL_ARCH := arm64
