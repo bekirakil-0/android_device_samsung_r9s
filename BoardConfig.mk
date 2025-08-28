@@ -178,6 +178,7 @@ TARGET_USES_LOGD := true
 TW_INCLUDE_LPDUMP := true
 TW_INCLUDE_LPTOOLS := true
 TW_EXCLUDE_TWRPAPP := true
+TW_OEM_BUILD := true
 
 # Statusbar icons flags
 TW_STATUS_ICONS_ALIGN := center
