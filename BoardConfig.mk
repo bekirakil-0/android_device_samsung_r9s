@@ -21,7 +21,7 @@ TARGET_CPU_VARIANT_RUNTIME := cortex-a76
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
-TARGET_2ND_CPU_ABI := armeabi-v8a
+TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a76
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a76
@@ -49,7 +49,7 @@ TARGET_SCREEN_DENSITY := 480
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32 printk.devkmsg=on firmware_class.path=/vendor/firmware_mnt/image bootconfig androidboot.hardware=exynos2100 androidboot.selinux=permissive loop.max_part=7 buildvariant=eng androidboot.usbcontroller=10e00000.usb androidboot.memcg=1 
+BOARD_KERNEL_CMDLINE := androidboot.hardware=exynos2100 androidboot.selinux=permissive loop.max_part=7 buildvariant=eng androidboot.usbcontroller=10e00000.usb androidboot.memcg=1 
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_SECOND_OFFSET := 0x80000000
@@ -66,7 +66,7 @@ BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --board "SRPUG16A017RU"
 BOARD_KERNEL_IMAGE_NAME := Image
 #BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-BOARD_KERNEL_SEPARATED_DTBO := true
+#BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/r9s/bootimg.mk
 TARGET_KERNEL_CONFIG := r9s_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/r9s
@@ -95,7 +95,7 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_SUPER_PARTITION_SIZE := 11744051200
 BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
-BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product odm system_ext
+BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product odm system_ext 
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 9629454336
 
 # System as root
@@ -112,10 +112,10 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 RECOVERY_SDCARD_ON_DATA := true
 
-# Security patch level
-VENDOR_SECURITY_PATCH := 2021-08-01
+# Security patch level (Disabled for anti rollback.)
+#VENDOR_SECURITY_PATCH := 2021-08-01
 
-# Verified Boot
+# Verified Boot (If you have problems use --flag 2 without additional props and replace offical avbkey with testkey.)
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3 --prop com.android.build.recovery.fingerprint:samsung/r9sxxx/r9s:11/RP1A.200720.012/G990EXXSHGYH2:user/release-keys
@@ -130,21 +130,20 @@ VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
 # Crypto (Disabled until i fix it)
-TARGET_VENDOR_PROP += device/samsung/r9s/vendor.prop
 TW_INCLUDE_CRYPTO := false
 TW_INCLUDE_CRYPTO_FBE := false
-BOARD_USES_EXYNOS_FBE_DECRYPTION := false
+#BOARD_USES_EXYNOS_FBE_DECRYPTION := false (Need to complete decryptor script.)
 TW_INCLUDE_FBE_METADATA_DECRYPT := false
 BOARD_USES_METADATA_PARTITION := true
 
-# PRODUCT_COPY_FILES directives.(Need Fix)
+# PRODUCT_COPY_FILES directives.(Won't boot if enabled. Need to replace correct files into vendor.)
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+#TARGET_VENDOR_PROP += device/samsung/r9s/vendor.prop
+#TW_LOAD_VENDOR_BOOT_MODULES := true
+#TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 #TW_LOAD_VENDOR_MODULES :=
-TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
-
-# TWRP Configuration
+# TWRP Configuration (NOT working for OFOX and PBRP. If you dont build TWRP, disable TWRP Configuration)
 TW_DEVICE_VERSION := 0_Bekirakil
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
@@ -182,8 +181,32 @@ TW_EXCLUDE_TWRPAPP := true
 TW_OEM_BUILD := true
 
 # Statusbar icons flags
-TW_STATUS_ICONS_ALIGN := center
-TW_CUSTOM_CPU_POS := 580
-TW_CUSTOM_CLOCK_POS := 50
-TW_CUSTOM_BATTERY_POS := 800
+#TW_STATUS_ICONS_ALIGN := center
+#TW_CUSTOM_CPU_POS := 580
+#TW_CUSTOM_CLOCK_POS := 50
+#TW_CUSTOM_BATTERY_POS := 800
+
+# OFOX/PBRP Configuration
+TW_DEVICE_VERSION := 1_Bekirakil
+TW_THEME := portrait_hdpi
+RECOVERY_SDCARD_ON_DATA := true
+TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
+TW_MAX_BRIGHTNESS := 561
+TW_DEFAULT_BRIGHTNESS := 255
+TW_Y_OFFSET := 100
+TW_H_OFFSET := -100
+TW_NO_REBOOT_BOOTLOADER := true
+TW_HAS_DOWNLOAD_MODE := true
+TW_INCLUDE_NTFS_3G := true
+TW_USE_NEW_MINADBD := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_USE_TOOLBOX := true
+TARGET_USES_MKE2FS := true
+TW_NO_LEGACY_PROPS := true
+TW_NO_BIND_SYSTEM := true
+TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
+TW_USE_SAMSUNG_HAPTICS := true
+TW_BACKUP_EXCLUSIONS := /data/fonts
 # End*
