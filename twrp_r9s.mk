@@ -36,5 +36,5 @@ PRODUCT_NAME := twrp_r9s
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-G990E
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
+PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
