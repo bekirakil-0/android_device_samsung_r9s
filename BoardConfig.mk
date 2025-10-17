@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2023 The Android Open Source Project
-# Copyright (C) 2023 tinydeveloper-bkr
+#
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -71,7 +71,7 @@ BOARD_CUSTOM_BOOTIMG_MK := device/samsung/r9s/bootimg.mk
 TARGET_KERNEL_CONFIG := r9s_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/r9s
 TARGET_KERNEL_ARCH := arm64
-BOARD_ROOT_EXTRA_FOLDERS := cache carrier data_mirror efs keyrefuge linkerconfig metadata odm_dlkm oem omr optics postinstall prism second_stage_resources spu system_ext vendor_dlkm
+BOARD_ROOT_EXTRA_FOLDERS := cache carrier data_mirror efs keyrefuge linkerconfig metadata oem omr optics prism spu
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
@@ -115,24 +115,31 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 # Security patch level (Disabled for anti rollback.)
 #VENDOR_SECURITY_PATCH := 2021-08-01
 
-# Verified Boot (If you have problems use --flag 2 without additional props and replace offical avbkey with testkey.)
+# Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3 --prop com.android.build.recovery.fingerprint:samsung/r9sxxx/r9s:11/RP1A.200720.012/G990EXXSHGYH2:user/release-keys
-BOARD_AVB_RECOVERY_KEY_PATH := device/samsung/universal2100/avbkey_rsa4096.pem
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
+#BOARD_AVB_ENABLE := true
+#BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+#BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3 --prop com.android.build.recovery.fingerprint:samsung/r9sxxx/r9s:11/RP1A.200720.012/G990EXXSHGYH2:user/release-keys
+#BOARD_AVB_RECOVERY_KEY_PATH := device/samsung/universal2100/avbkey_rsa4096.pem
+#BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
+#BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
+#BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
-# Crypto (Disabled until i fix it)
+# Crypto (Disabled until fix)
 TW_INCLUDE_CRYPTO := false
 TW_INCLUDE_CRYPTO_FBE := false
-#BOARD_USES_EXYNOS_FBE_DECRYPTION := false (Need to complete decryptor script.)
+#BOARD_USES_EXYNOS_FBE_DECRYPTION := false (-)
 TW_INCLUDE_FBE_METADATA_DECRYPT := false
 BOARD_USES_METADATA_PARTITION := true
 
@@ -149,7 +156,7 @@ TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
-TW_FRAMERATE := 60
+TW_FRAMERATE := 120
 TW_MAX_BRIGHTNESS := 561
 TW_DEFAULT_BRIGHTNESS := 255
 TW_Y_OFFSET := 100
