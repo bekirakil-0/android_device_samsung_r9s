@@ -24,6 +24,7 @@ on fs
 on boot
     start health-hal-2-1-samsung
 
+#
 on property:crypto.ready=1
     start vendor.keymaster-4-0
     start vendor.keymaster-4-0_strongbox
@@ -34,6 +35,8 @@ on property:crypto.ready=0
 
 on property:twrp.user.0.decrypt=0
     umount /vendor/firmware_mnt
+
+#
 
 on late-init
     setprop sys.usb.controller 10e00000.usb

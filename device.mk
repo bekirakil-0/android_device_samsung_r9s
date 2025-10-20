@@ -17,8 +17,8 @@ PRODUCT_PACKAGES += \
 
 # device decryption (need fix)
 PRODUCT_PACKAGES += \ 
-    exynos_decrypt \
-    exynos_decrypt_fbe
+    $(LOCAL_PATH)/init.recovery.exynos_decrypt.rc \
+    $(LOCAL_PATH)/init.recovery.exynos_decrypt_fbe.rc
 
 # Enable Fuse Passthrough
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
