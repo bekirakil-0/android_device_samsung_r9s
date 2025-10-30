@@ -1,5 +1,5 @@
 # TWRP Device Tree for Samsung Galaxy S21 FE Exynos (5G) 
-# (SM-G990E/DS)
+# SM-G990E/DS
 
 ## Clone repo
 ```bash 
