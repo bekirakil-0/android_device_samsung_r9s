@@ -2,7 +2,7 @@
 # SM-G990E/DS
 
 ## Release and install instructions
-(https://xdaforums.com/t/sm-s911b-0-one-ui-6-1-userdata_aio-odin-flashable-to-remove-encryption-make-rom-rw-install-twrp-root-use-on-stock-firmware-unlocked-bootloaders.4610067/)
+https://xdaforums.com/t/recovery-unofficial-ofox-sm-g990e-ds-samsung-s21-fe-5g-exynos-ofox-recovery-project-r11-3.4765885
 
 ## Clone repo
 ```bash 
