@@ -24,10 +24,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/r9s/recovery/root,recovery/root)
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="r9sxxx-user 11 RP1A.200720.012 G990EXXSHGYH2 release-keys"
+#PRODUCT_BUILD_PROP_OVERRIDES += \
+    #PRIVATE_BUILD_DESC="r9sxxx-user 11 RP1A.200720.012 G990EXXSHGYH2 release-keys"
 
-BUILD_FINGERPRINT := samsung/r9sxxx/r9s:11/RP1A.200720.012/G990EXXSHGYH2:user/release-keys
+#BUILD_FINGERPRINT := samsung/r9sxxx/r9s:11/RP1A.200720.012/G990EXXSHGYH2:user/release-keys
 
 
 ## Device identifier

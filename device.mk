@@ -16,9 +16,9 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # device decryption (need fix)
-PRODUCT_PACKAGES += \ 
-    $(LOCAL_PATH)/init.recovery.exynos_decrypt.rc \
-    $(LOCAL_PATH)/init.recovery.exynos_decrypt_fbe.rc
+#PRODUCT_PACKAGES += \ 
+    #$(LOCAL_PATH)/init.recovery.exynos_decrypt.rc \
+    #$(LOCAL_PATH)/init.recovery.exynos_decrypt_fbe.rc
 
 # Enable Fuse Passthrough
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true

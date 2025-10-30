@@ -1,5 +1,3 @@
-import /init.recovery.exynos_decrypt.rc
-
 on init
     write /proc/sys/kernel/hung_task_timeout_secs 0
 	start watchdogd
@@ -8,7 +6,7 @@ on init
     rm /efs
     mkdir /efs
     mkdir /sec_efs
-setprop prepdecrypt.setpatch true
+# setprop prepdecrypt.setpatch true
 
 on fs
     wait /dev/block/platform/13100000.ufs
@@ -16,27 +14,39 @@ on fs
     symlink /dev/block/platform/13100000.ufs/by-name /dev/block/by-name
 
 #[ Mount firmware, fix value with device mountpoint]
-    mkdir /vendor/firmware_mnt
-    mount vfat /dev/block/bootdevice/by-name/apnhlos /vendor/firmware_mnt
+    # mkdir /vendor/firmware_mnt
+    # mount vfat /dev/block/bootdevice/by-name/apnhlos /vendor/firmware_mnt
 
  export ANDROID_ROOT /system_root
 
+#@RECOVERY [For reboot reason.
+    symlink /dev/block/platform/13100000.ufs/by-name/param /dev/block/param
+    chown root system /dev/block/param
+    chmod 0777 /dev/block/param
+#]
+
 on boot
+    setprop ro.boot.vbmeta.avb_version 1.1
+    setprop ro.boot.avb_version 1.1
     start health-hal-2-1-samsung
 
 #
-on property:crypto.ready=1
-    start vendor.keymaster-4-0
-    start vendor.keymaster-4-0_strongbox
+#[on property:crypto.ready=1
+    #start vendor.keymaster-4-0
+    #start vendor.keymaster-4-0_strongbox
 
-on property:crypto.ready=0
-    stop vendor.keymaster-4-0_strongbox
-    stop vendor.keymaster-4-0
+#on property:crypto.ready=0
+    #stop vendor.keymaster-4-0_strongbox
+    #stop vendor.keymaster-4-0]
 
-on property:twrp.user.0.decrypt=0
-    umount /vendor/firmware_mnt
+#on property:twrp.user.0.decrypt=0
+    #umount /vendor/firmware_mnt
 
 #
+
+#to cut charging battery path
+    write /sys/class/power_supply/battery/siop_level 0
+
 
 on late-init
     setprop sys.usb.controller 10e00000.usb
@@ -50,3 +60,5 @@ service watchdogd /system/bin/watchdogd 10 30
     class core
     oneshot
     seclabel u:r:watchdogd:s0
+    
+#import /init.recovery.exynos_decrypt.rc
