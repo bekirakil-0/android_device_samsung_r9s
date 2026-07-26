@@ -128,6 +128,9 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 # Security patch level (Disabled for anti rollback.)
 #VENDOR_SECURITY_PATCH := 2021-08-01
 
+# Keymaster Version Override for Recovery Decryption
+OF_DEFAULT_KEYMASTER_VERSION := 4.0
+
 # Crypto [Hack: prevent anti rollback]
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
