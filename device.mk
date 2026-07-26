@@ -40,4 +40,13 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.keymaster@4.0-service \
-    android.hardware.keymaster@4.0-impl
+    android.hardware.keymaster@4.0-impl \
+    android.hardware.keymaster@4.0-strongbox-service
+
+# For Prebuild Vendor
+# PRODUCT_COPY_FILES += \
+#    vendor/samsung/r9s/proprietary/vendor/bin/hw/android.hardware.keymaster@4.0-strongbox-service:recovery/root/vendor/bin/hw/android.hardware.keymaster@4.0-strongbox-service
+#    vendor/samsung/r9s/proprietary/vendor/bin/hw/android.hardware.keymaster@4.0-impl:recovery/root/vendor/bin/hw/android.hardware.keymaster@4.0-impl
+#    vendor/samsung/r9s/proprietary/vendor/bin/hw/android.hardware.keymaster@4.0-service:recovery/root/vendor/bin/hw/android.hardware.keymaster@4.0-service
+#    vendor/samsung/r9s/proprietary/vendor/bin/hw/android.hardware.gatekeeper@1.0-impl:recovery/root/vendor/bin/hw/android.hardware.gatekeeper@1.0-impl
+#    vendor/samsung/r9s/proprietary/vendor/bin/hw/android.hardware.gatekeeper@1.0-service:recovery/root/vendor/bin/hw/android.hardware.gatekeeper@1.0-service
