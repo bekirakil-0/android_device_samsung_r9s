@@ -12,7 +12,7 @@ odm_dlkm  				/odm_dlkm	ext4	ro,barrier=1            wait,logical,first_stage_mo
 /dev/block/by-name/metadata		/metadata	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic,sync		wait,first_stage_mount,formattable,check
 /dev/block/by-name/userdata		/data		f2fs	noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678,inlinecrypt	latemount,wait,check,fileencryption=aes-256-xts:aes-256-cts:v2,quota,reservedsize=128M,sysfs_path=/sys/devices/platform/13100000.ufs,checkpoint=fs,fscompress,length=-20480,keydirectory=/metadata/vold/metadata_encryption
 /dev/block/by-name/cache		/cache		ext4	defaults		recoveryonly
-#/dev/block/mmcblk0p1			/sdcard		sdfat	defaults		recoveryonly
+#/dev/block/mmcblk0p1			/sdcard		auto	defaults		recoveryonly
 /dev/block/by-name/efs			/efs		ext4	defaults		recoveryonly
 /dev/block/by-name/sec_efs		/sec_efs	ext4	defaults		recoveryonly
 #/dev/block/by-name/carrier		/carrier	ext4	defaults		recoveryonly
