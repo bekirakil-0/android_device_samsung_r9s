@@ -207,6 +207,7 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_USE_NEW_MINADBD := true
 TW_HAS_FLASHLIGHT := true
+OF_FL_PATH1 := "/sys/devices/virtual/camera/flash/rear_torch_flash"
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_USE_TOOLBOX := true
