@@ -149,8 +149,8 @@ DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Display
 TARGET_SCREEN_DENSITY := 480
-DEVICE_SCREEN_WIDTH := 1080
-DEVICE_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 2400
 OF_SCREEN_H := 2400
 
 # TWRP Flags (NOT working on OFOX and PBRP. If you dont build TWRP, dont use this flags.)
@@ -198,7 +198,7 @@ OF_SCREEN_H := 2400
 
 # OFOX/PBRP Flags
 TW_DEVICE_VERSION := 0-Bekirakil
-#TW_THEME := portrait_fullhdpi
+TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
