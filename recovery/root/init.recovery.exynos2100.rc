@@ -44,10 +44,12 @@ on late-init
     setprop sys.usb.configfs 1
     setprop sys.usb.config adb
 
+# Gracefully detach the vendor partition to prevent resource busy locks
 on boot
     setprop ro.boot.vbmeta.avb_version 1.1
     setprop ro.boot.avb_version 1.1
     start health-hal-2-1-samsung
+    exec -- umount -l /vendor
 
 on fs
     wait /dev/block/platform/13100000.ufs
