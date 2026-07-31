@@ -38,6 +38,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/r9s/recovery/root,recovery/root)
 
+# Inject flashlight script into the recovery ramdisk
+PRODUCT_COPY_FILES += \
+    device/samsung/r9s/flashlight/flashlight_wrapper.sh:recovery/root/sbin/flashlight
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := twrp_r9s
 PRODUCT_DEVICE := r9s
