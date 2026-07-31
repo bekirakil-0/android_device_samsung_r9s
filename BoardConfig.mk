@@ -147,6 +147,9 @@ DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
+# Enable LZ4 compression for the recovery ramdisk
+BOARD_RAMDISK_USE_LZ4 := true
+
 # Display
 TARGET_SCREEN_DENSITY := 480
 
