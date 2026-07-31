@@ -26,6 +26,20 @@
 #
 
 on init
+    # Grant execution permission to the script dynamically at boot
+    chmod 0755 /sbin/flashlight_wrapper.sh
+
+    # Launch the flashlight translator wrapper in the background
+    start flashlight_translator
+
+service flashlight_translator /sbin/flashlight_wrapper.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s6
+
+on init
     write /proc/sys/kernel/hung_task_timeout_secs 0
     start watchdogd
 
