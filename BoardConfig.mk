@@ -198,7 +198,7 @@ OF_SCREEN_H := 2400
 
 # OFOX/PBRP Flags
 TW_DEVICE_VERSION := 0-Bekirakil
-TW_THEME := portrait_hdpi
+#TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
