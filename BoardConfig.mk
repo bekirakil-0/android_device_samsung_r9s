@@ -149,6 +149,9 @@ DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Display
 TARGET_SCREEN_DENSITY := 480
+DEVICE_SCREEN_WIDTH := 1080
+DEVICE_SCREEN_HEIGHT := 2400
+OF_SCREEN_H := 2400
 
 # TWRP Flags (NOT working on OFOX and PBRP. If you dont build TWRP, dont use this flags.)
 #TW_DEVICE_VERSION := 0_Bekirakil
