@@ -4,13 +4,15 @@
 TARGET_NODE="/sys/devices/virtual/camera/flash/rear_torch_flash"
 CONTROL_PIPE="/tmp/torch_control"
 
-# Ensure /tmp exists and create the named pipe
-mkdir -p /tmp
-if [ ! -p "$CONTROL_PIPE" ]; then
-    rm -f "$CONTROL_PIPE"
-    mkfifo "$CONTROL_PIPE"
-    chmod 666 "$CONTROL_PIPE"
-fi
+# Wait until /tmp directory is fully available and writable
+while [ ! -d "/tmp" ]; do
+    sleep 1
+done
+
+# Clean up any stale pipes and create a fresh named pipe
+rm -f "$CONTROL_PIPE"
+mkfifo "$CONTROL_PIPE"
+chmod 666 "$CONTROL_PIPE"
 
 # Continuous background loop to read input from OrangeFox and translate it
 while true; do
